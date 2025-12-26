@@ -1,0 +1,110 @@
+<!-- HTML Boilerplate -->
+
+<!-- All HTML documents have the same basic structure or boilerplate
+     that needs to be in place before anything useful can be done.
+-->
+
+<!-- Every HTML page starts with a doctype declaration. The doctype's purpose is to tell
+     the browser what version of HTML it should use to render the document.
+     The latest version of HTML is HTML5, and the doctype for that version is
+     <!DOCTYPE html>
+-->
+
+<!-- After declaring the doctype, we need to provide an <html> element.
+     Known as the root element of the document, meaning that every other
+     element in the document will be a descendant of it.-->
+ 
+    <!-- This becomes more important later on when we manipulate HTml with
+         JavaScript. For now, just know that the <html> element should be included
+         on every HTML document.-->
+
+<!-- Let's add the <html> element by typing out its opening and closing tags, like so:
+     <!DOCTYPE html>
+     <html lang="en">
+     </html>
+-->
+
+<!-- Notice the word "lang" here? It represents an HTML attribute which is associated with
+     the given HTML tag (i.e <html> in this case)
+     
+     These attributes provide additional information about HTML elements
+-->
+
+<!-- What is the lang attribute?
+     "lang" specifies the language of the text content in the element
+     This attribute is primarily used for improving accessibility of the webpage.
+     It allows assistive technologies, for example screen readers, to adapt according
+     to the language and invoke correct pronounciation.
+-->
+
+<!-- Head element
+     The <head> element is where we put important meta-information about our webpages,
+     and stuff required for our webpages to render correctly in the browser.
+     Inside the <head>, we should not use any element that displays content on the webpage.
+-->
+
+<!-- Back in our "index.html" file, let's add a <head> element with a <meta> element and a
+     title within it. The <head> element goes within the <html> element and should always
+     be the first element under the opening <html> tag -->
+
+<!-- Meta element 
+     We should always have the <meta> tag with the charset encoding of the webpage in the <head>
+     element: <meta charset="UTF-8">
+
+     Setting the encoding is very important because it ensures that the webpage will
+     display special symbols and characters from different languages correctly in the browser.
+-->
+
+<!-- Title element 
+     Another element we should always include in the head of an HTML document is the <title> element
+     
+     <title>My First Webpage</title>
+
+     The <title> element, the webpage's title would default to its file name.
+     In our case that would be "index.html", which isn't very meaningful for users;
+     this would make it very difficult to find our webpage if the user has many
+     browser tabs open.
+
+     There are many more elements that can go within the head of an HTML document.
+     However, for now it's only crucial to know about the two elements we have covered here.
+-->
+
+<!-- Body element 
+     The final element needed to complete the HTML boilerplate is the <body> element
+     This is where all the content that will be displayed to users will go -- the text,
+     images, lists, links, and so on.
+
+     To complete the boilerplate, add a <body> element to the "index.html" file.
+     The <body> element also goes within the <html> element and is always below the
+     <head> element, like so:
+
+     <!DOCTYPE html>
+     <html lang="en">
+          <head>
+               <meta charset="UTF-8">
+               <title>My First Webpage</title>
+          </head>
+
+          <body>
+          </body>
+     </html>
+-->
+
+<!-- Knowledge Check 
+     1. What is the purpose of the doctype declaration?
+          The purpose of the doctype declaration communicates to the web browser that the file should be rendered in HTML5.
+          + tells the browser to use modern HTML5 standards for rendering the page, prevents the browser from using
+          "quirks mode" (legacy rendering)
+
+     2. What is the HTML element?
+          The HTML element declares that the language given from the file is initialized to a set language (e.g. en, ru, etc.)
+          + specifies the document's language for accessibility and search engines
+
+     3. What is the purpose of the head element?
+          The purpose of the head element is declaring the title of the .html file, other dependencies (like meta charset, meta view, etc)
+          + contains metadata that doesn't display on the page but is crucial and links to CSS/scripts
+
+     4. What is the purpose of the body element?
+          The purpose of the body element is declaring all content that will be displayed to users on the webpage, such as
+          text, images, links, and other visible elements
+-->
