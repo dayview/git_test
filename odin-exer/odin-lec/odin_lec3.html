@@ -16,10 +16,11 @@
     </body>
 
     It looks like two paragraphs of text, so you might expect it to display in that way.
+
     !! However, that is not the case, as you can see in the output below.
 
     output: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, porro distinctio! Officiis corporis quidem in blanditiis ab consequatur est accusamus? Asperiores qui ducimus pariatur minus sunt eius reiciendis similique inventore!
-    (^ yep, that long stuff)
+    (^ yep, that long stuff, and not wrapped as expected)
 
     When the browser encounters new lines like this in your HTML, it will compress them down into one single space.
     The result of this compression is that all of the text is clumped together into one long line.
@@ -37,6 +38,11 @@
     <p>Officiis corporis quidem in blanditiis ab consequatur est accusamus?</p>
         
     <p>Asperiores qui ducimus pariatur minus sunt eius reiciendis similique inventore!</p>
+
+    !! The expected output should show something like this:
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, porro distinctio!
+    Officiis corporis quidem in blanditiis ab consequatur est accusamus?
+    Asperiores qui ducimus pariatur minus sunt eius reiciendis similique inventore!
 -->
 
 <!-- or... in proper HTML syntax
@@ -49,6 +55,11 @@
             <p> Iorem lpsum...</p>
         </body>
     </html>
+
+    !! Expected Output:
+    Lorem ipsum...
+    Iorem lpsum...
+    
 -->
 
 <!-- Headings -->
@@ -70,12 +81,12 @@
         <head>
         </head>
         <body>
-            <h1>This is a heading 1</h1>
-            <h2>This is a heading 2</h2>
-            <h3>This is a heading 3</h3>
-            <h4>This is a heading 4</h4>
-            <h5>This is a heading 5</h5>
-            <h6>This is a heading 6</h6>
+            <h1>This is heading 1</h1>
+            <h2>This is heading 2</h2>
+            <h3>This is heading 3</h3>
+            <h4>This is heading 4</h4>
+            <h5>This is heading 5</h5>
+            <h6>This is heading 6</h6>
         </body>
     </html>
 -->
@@ -176,8 +187,8 @@
         <head>
         </head>
         <body>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Ut enim ad minim veniam.</p>
+            <p>Lorem ipsum dolor sit amet.</p> <- siblings with paragraph 2
+            <p>Ut enim ad minim veniam.</p> <- siblings with paragraph 1
         </body>
     </html>
 -->
