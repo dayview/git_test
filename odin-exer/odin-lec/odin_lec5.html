@@ -246,4 +246,118 @@
 
      For example, using an absolute path we can display an image located on The Odin Project site:
      <img src="https://www.theodinproject.com/mstile-310x310.png">
+
+     To display images on your website that are hosted on your own web server, you can use a relative path!
+-->
+
+<!-- Steps:
+     1. Create a new directory named "images" within the "odin-links-and-images" project.
+     
+     2. Next, download our practice image and move it into the images directory we just created.
+
+     3. Rename the image to "dog.jpg".
+-->
+
+<!-- Finally, add the image to the
+     "index.html" file:
+     <body>
+          <h1>Homepage</h1>
+          <a href="https://www.theodinproject.com/about">About The Odin Project</a>
+
+          <a href="./pages/about.html">About</a>
+
+          <img src="./images/dog.jpg">
+     </body>
+-->
+
+<!-- !! An easy way to provide credit is
+     include the creator's name and contact info in a README file in your repository, or give attribution.
+     
+     To find them, Google Images and in Image Results -> Tools -> Usage Rights -> Creative Commons
+     
+     Choose and click on a image and click license details.
+-->
+
+<!-- Parent Directories -->
+
+<!-- What if we want to use the dog 
+     image in the about page? We would first have to go out one level out of the pages directory into its parent directory so we could then access the images directory.
+     
+     To go to the parent directory, we need to use two dots in the relative filepath like this: "../"
+     
+     To see it in action, within the body of the "about.html" file, add the following image below the heading we added earlier:
+     <img src="../images/dog.jpg">
+-->
+
+<!-- To break this down:
+     1. First, we are going to the parent directory of the "pages" directory which is "odin-links-and-images".
+     
+     2. Then, from the parent directory, we can go into the "images" directory.
+     
+     3. Finally, we can access the "dog.jpg" file.
+
+     Using the metaphor we used earlier, using "../" in a filepath is kind of like stepping out from the room you are currently in to the main hallway so you can go to another room.
+-->
+
+<!-- Alt Attribute -->
+
+<!-- Besides the <src> attribute, every 
+     image element should also have an <alt> (alternative text) attribute.
+
+     The <alt> attribute is used to describe an image. It will be used in place of the image if it cannot be loaded.
+     
+     It is also used with screen readers to describe what the image is to visually impaired users.
+
+     This is how The Odin Project logo example we used earlier looks with an <alt> attribute included:
+          <img src="https://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project Logo">
+
+     !! As a bit of practice, add an <alt> attribute to the dog image we added to the "odin-links-and-images" project.
+-->
+
+<!-- Image Size Attributes -->
+
+<!-- While not strictly required,
+     specifying height and width attributes in image tags helps the browser layout the page without causing the page to jump and flash.
+
+     It is a good habit to always specify these attributes on every image, even when the image is the correct size or you are using CSS to modify it.
+
+     This is to prevent content jumping as images load. Use the image's actual dimensions when specifying size.
+
+     Here is our Odin Project logo example with height and width attributes included:
+     <img src="htpps://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project Logo" height="310" width="310">
+-->
+
+<!-- Knowledge Check
+     1. What element is used to create a link?
+     The element used to create a link is <a> (anchor), usually write like <a href="link-here">text</a>.
+
+     2. What is an attribute?
+     An attribute is a name-value pair inside a tag that provides additional information or configuration for that element (for example href="...", alt="...", etc).
+
+     !! An attribute is extra information added inside a tag that modifies or configures an element, such as href on <a> or src on <img>.
+
+     3. What attribute tells links where to go to?
+     It is the href attribute.
+
+     4. What security considerations must be taken if you wish to use the target attribute to open links in a new tab/window?
+     We should use rel="noopener noreferrer" when you open links in a new tab/window with target="_blank" to prevent the new page from accessing window.opener and to avoid passing referrer information.
+
+     5. What is the difference between an absolute and relative link?
+     The difference between an absolute and relative link is that an absolute link writes the full URL including protocol and domain (e.g., https://example.com/page.html); can point to any site, internal or external.
+     
+     Meanwhile, a relative link writes the path described relative to the current page (e.g., about.html or ../images/pic.png); it works only within the same site structure.
+
+     !! Absolute links can also be internal
+
+     6. Which element is used to display an image?
+     The element used to display an image is <img>.
+
+     7. What two attributes do images always need to have?
+     The two attributes images always need to have is "src" and "alt", so that the browser or the rendered page can get the access of the said image and provide an alternate description if the user has a low connection or accessibility usages.
+
+     8. How do you access a parent directory in a filepath?
+     Use "../" at the start of the path, e.g. ../file.txt
+
+     9. What are the four main image formats that you can use for images on the web?
+     The four main image formats are: JPG, GIF, PNG, and SVG.
 -->
