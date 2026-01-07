@@ -1,32 +1,31 @@
-<!-- Intro to CSS -->
+# Intro to CSS
 
-<!-- At the most basic level, CSS is made up of various rules. Each rule is
-     made up of a selector and a semicolon-separated list of declarations, wtih each of those declarations being made up of a property-value pair.
+At the most basic level, CSS is made up of various rules. 
+
+Each rule is made up of a selector and a semicolon-separated list of declarations, wtih each of those declarations being made up of a property-value pair.
      
-     div.bold-text { <- selector
+```css
+div.bold-text { <- selector
        property -> font-weight: 700; <- value
      }
+```
 
-     div.bold-text - selector
-     font-weight   - property
-     700           - value
--->
+* `div.bold-text` - selector <br>
+* `font-weight`   - property <br>
+* `700`           - value
 
-<!-- Semantic HTML
+## Semantic HTML
      
-     !! A <div> is one of the basic HTML elements, as it is an empty container.
-        In general, it is best to use other tags such as <h1> or <p> for content in your projects, but as we learn more about CSS you'll find that there are many cases where the thing you need is just a container for other elements.
+A `<div>` is one of the basic HTML elements, as it is an empty container.
 
-        Many of the module's exercises use plain <div>s for simplicity.
+In general, it is best to use other tags such as `<h1>` or `<p>` for content in your projects, but as we learn more about CSS you'll find that there are many cases where the thing you need is just a container for other elements.
 
-        Later lessons will go into much more depth about when it is appropriate to use the various HTML elements!
--->
+Many of the module's exercises use plain `<div>`s for simplicity.
 
-<!-- Selectors -->
+## Selectors
 
-<!-- Selectors refer to the HTML elements to which CSS rules apply; they're
-     what is actually being "selected" for each rule. They're the most common by far and the ones you should get comfortable first.
--->
+Selectors refer to the HTML elements to which CSS rules apply; they're what is actually being "selected" for each rule. They're the most common by far and the ones you should get comfortable first.
+
 
 <!-- Universal Selector -->
 
@@ -408,61 +407,134 @@
      (While the module states that it won't dive into this lesson, this can actually be taken advantage of).
 -->
 
-<!-- Knowledge Check 
-     1. What is the syntax for class and ID selectors?
-     .container (for class selectors), #div (for ID selectors)
+## Summary
+### Three Ways to Add CSS
+| Method | Syntax | When to Use | Priority |
+| ------ | ------ | ----------- | -------- |
+| Inline | `<div style="color: red;">` | One-off styling, highest priority needed | Highest
+| Internal | `<style>` in `<head>` | Single-page projects, quick prototypes | Medium
+| External | `<link rel="stylesheet" href="style.css">`| Multi-page sites, best practice | Lowest
 
-     2. How would you apply a single rule to two different selectors?
-     To apply a single rule to two different selectors, use a comma-separated list:
+### Selector Types & Syntax
+```css
+/* Universal Selector */
+* {
+     margin: 0;
+}
 
-     h1, h2, .special {
-          /* fancy shmancy code */
-     }
+/* Type/Element Selector */
+p {
+     color: blue;
+}
 
-     !! This applies the same styles to all three selectors: h1, h2, and elements with class "special".
+h1 {
+     font-size: 32px;
+}
 
-     In context:
+/* Class Selector */
+.button {
+     background: green;
+}
+
+/* Chaining Class Selector */
+.text.highlight {
+     color: yellow;
+}
+
+/* ID Selector */
+#header {
+     height: 100px;
+}
+
+/* Descendant Combinator (space) */
+.parent .child {
+     color: red;
+}
+
+/* Child Combinator (>) */
+.parent .child {
+     color: red;
+}
+
+/* Adjacent Sibling (+) */
+h1 + p {
+     margin-top: 0;
+}
+
+/* General Sibling (~) */
+h1 ~ p {
+     color: gray;
+}
+```
+
+
+## Knowledge Check 
+1. What is the syntax for class and ID selectors?
+
+.container (for class selectors), #div (for ID selectors)
+
+2. How would you apply a single rule to two different selectors?
+
+To apply a single rule to two different selectors, use a comma-separated list:
+```css
+h1, h2, .special {
+     /* fancy shmancy code */
+}
+```
+
+This applies the same styles to all three selectors: h1, h2, and elements with class "special".
+
+In context:
+```css
      .button-one, .button-two, .button-three {
           background-color: #007bff;
           padding: 10px 20px;
           border-radius: 5px;
      }
+```
 
-     !! All three buttons get identical styling, even though they have different class names.
+All three buttons get identical styling, even though they have different class names.
 
-     !!! Comma between each selector, no comma after the final selector, can mix element selectors (h1), class selectors (.button), ID selectors (#header), etc.
+Comma between each selector, no comma after the final selector, can mix element selectors (`h1`), class selectors (`.button`), ID selectors (`#header`), etc.
 
-     3. Given an element that has an id of "title" and a class of "primary", how would you use both attributes for a single rule?
-     I would use both attributes for a single rule by using both class and ID selectors by: 
-     .primary#title {
-          /* fancy shmancy code */
-     }
+3. Given an element that has an id of "title" and a class of "primary", how would you use both attributes for a single rule?
 
-     4. What does the descendant combinator do?
-     What the descendant combinator does is that, for each parent-child or ancestor-descendant relationship determined in the HTML file by using this syntax:
+I would use both attributes for a single rule by using both class and ID selectors by: 
+```css
+.primary#title {
+     /* fancy shmancy code */
+}
+```
 
+4. What does the descendant combinator do?
+
+What the descendant combinator does is that, for each parent-child or ancestor-descendant relationship determined in the HTML file by using this syntax:
+```css
      .ancestor .descendant or ancestor descendant {
           /* fancy shmancy code */
      }
+```
 
-     5. What are the names of the three ways to add CSS to HTML?
-     External, Internal, and Inline
+5. What are the names of the three ways to add CSS to HTML?
 
-     6. What are the main differences between the three ways of adding CSS to HTML?
-     External is creating another file generally called "styles.css", then declaring the link href in the HTML file. (e.g. <link rel="stylesheet" href="styles.css")
+External, Internal, and Inline
 
-     Internal is declaring the <style> attribute inside <head> with the given syntax:
-          <head>
-               <style>
-                    div {
-                         /* fancy shmancy code */
-                    }
-               </style>
-          </head>
-          <body>
-               /* content here */
-          </body>
-          
-     Inline is explicitly declaring the attributes inside the HTML element tags (e.g. <div style="background: white; /* so on and so forth">Text here</div>)
+6. What are the main differences between the three ways of adding CSS to HTML?
 
--->
+External is creating another file generally called "styles.css", then declaring the link href in the HTML file. (e.g. `<link rel="stylesheet" href="styles.css"`)
+
+Internal is declaring the `<style>` attribute inside `<head>` with the given syntax:
+```css
+<head>
+     <style>
+          div {
+               /* fancy shmancy code */
+          }
+     </style>
+</head>
+<body>
+     /* content here */
+</body>
+```
+
+Inline is explicitly declaring the attributes inside the HTML element tags (e.g. <br>`<div style="background: white; /* so on and so forth">Text here</div>`)
