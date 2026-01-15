@@ -515,7 +515,7 @@ You see this fairly frequently in navigation bars. The navigation below is displ
 Add `display: inline-block;` to the rule with the `.links-list a` selector, and you will see how it fixes the issue by causing the padding to be respected by other elements:
 ```html
 <nav>
-    <ul class"links-list">
+    <ul class="links-list">
         <li><a href="">Link one</a></li>
         <li><a href="">Link two</a></li>
         <li><a href="">Link three</a></li>
