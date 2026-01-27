@@ -161,20 +161,34 @@ div {
 ## Knowledge Check
 1. What is the difference between a block element and an inline element?
 
-> The difference between a block and an inline element is that a block is more associated with groups/division of a certain section of elements, whereas an inline element is more associated with the text spacing, or specifically an element in paragraphs.
+> Block elements start on a new line and take up the full width available (like stacking boxes). <br> Examples: `<div>`, `<h1>`, `<p>`. <br> Inline elements stay within the flow of text and only take up as much width as their content needs (like words in a sentence). <br> Examples: `<span>`, `<a>`, `<strong>`.
 
 2. What is the difference between an inline element and an inline-block element?
 
-> The difference between an inline element and an inline-block is that an inline element specifies on the text-lining of the paragraph, or any related text, whereas an inline-block specifies on the section/division of a text.
+> Inline (`display: inline`) elements flow with text, cannot have width/height set, and vertical margins/padding don't push other elements away. <br> Inline-block (`display: inline-block`) elements flow with text like inline BUT behave like blocks internally, you CAN set width/height, and margins/padding work fully.
+
+```css
+span {
+    display: inline; /* Can't set width/height */
+}
+
+span {
+    display: inline-block; /* CAN set width/height */
+    width: 100px;
+    height: 50px;
+}
+```
+
+> **`inline-block`** is like a block element that sits in a line instead of starting on a new line.
 
 3. Is an `h1` block or inline?
 > An `h1` tag is a block element.
 
 4. Is `button` block or inline?
-> A button tag is an inline element.
+> A button tag is an inline-block element.
 
 5. Is `div` block or inline?
-> A button tag is a block element.
+> A div tag is a block element.
 
 6. Is `span` block or inline?
 > A span tag is an inline element.
