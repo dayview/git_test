@@ -1,4 +1,4 @@
-# Inline vs Inline-Block Dispaly in CSS
+# Inline vs Inline-Block Display in CSS
 `display: inline-block` brought a new way to create side by side boxes that collapse and wrap properly depending on the available space in the containing element.
 
 It makes layouts that were previously accomplished with floats easier to create. *No need to clear floats anymore*.

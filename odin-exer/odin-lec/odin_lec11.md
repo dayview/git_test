@@ -157,3 +157,24 @@ div {
     background-color: yellow;
 }
 ```
+
+## Knowledge Check
+1. What is the difference between a block element and an inline element?
+
+> The difference between a block and an inline element is that a block is more associated with groups/division of a certain section of elements, whereas an inline element is more associated with the text spacing, or specifically an element in paragraphs.
+
+2. What is the difference between an inline element and an inline-block element?
+
+> The difference between an inline element and an inline-block is that an inline element specifies on the text-lining of the paragraph, or any related text, whereas an inline-block specifies on the section/division of a text.
+
+3. Is an `h1` block or inline?
+> An `h1` tag is a block element.
+
+4. Is `button` block or inline?
+> A button tag is an inline element.
+
+5. Is `div` block or inline?
+> A button tag is a block element.
+
+6. Is `span` block or inline?
+> A span tag is an inline element.
