@@ -1,0 +1,260 @@
+<!-- Working with Text -->
+
+<!-- Most content on the web is text-based, so you will find yourself needing to work with HTML
+     text elements quite a bit.
+-->
+
+<!-- Paragraphs -->
+
+<!-- What would you expect the following text to output on an HTML page? 
+    <body>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, porro distinctio! 
+        
+        Officiis corporis quidem in blanditiis ab consequatur est accusamus? 
+        
+        Asperiores qui ducimus pariatur minus sunt eius reiciendis similique inventore!
+    </body>
+
+    It looks like two paragraphs of text, so you might expect it to display in that way.
+
+    !! However, that is not the case, as you can see in the output below.
+
+    output: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, porro distinctio! Officiis corporis quidem in blanditiis ab consequatur est accusamus? Asperiores qui ducimus pariatur minus sunt eius reiciendis similique inventore!
+    (^ yep, that long stuff, and not wrapped as expected)
+
+    When the browser encounters new lines like this in your HTML, it will compress them down into one single space.
+    The result of this compression is that all of the text is clumped together into one long line.
+
+    If we want to create paragraphs in HTML, we need to use the paragraph element, which will
+    add a new line after each of our paragraphs. A paragraph element is defined by wrapping
+    text content with a <p> tag.
+
+    Changing our example from before to use paragraph elements fixes the issue: (next section)
+-->
+
+<!-- 
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, porro distinctio!</p>
+        
+    <p>Officiis corporis quidem in blanditiis ab consequatur est accusamus?</p>
+        
+    <p>Asperiores qui ducimus pariatur minus sunt eius reiciendis similique inventore!</p>
+
+    !! The expected output should show something like this:
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, porro distinctio!
+    Officiis corporis quidem in blanditiis ab consequatur est accusamus?
+    Asperiores qui ducimus pariatur minus sunt eius reiciendis similique inventore!
+-->
+
+<!-- or... in proper HTML syntax
+    <html>
+        <head>
+        </head>
+        <body>
+            <p> Lorem ipsum...</p>
+
+            <p> Iorem lpsum...</p>
+        </body>
+    </html>
+
+    !! Expected Output:
+    Lorem ipsum...
+    Iorem lpsum...
+    
+-->
+
+<!-- Headings -->
+
+<!-- Headings are different from other HTML text elements:
+     they are displayed larger and bolder than other text to signify that they are headings.
+     
+     There are 6 different levels of headings starting from <h1> to <h6>.
+     The number within the heading tag represents that heading's level.
+     The largest and most important heading is h1, while h6 is the tiniest heading
+     at the lowest level.
+     
+     Headings are defined much like paragraphs. For example, to create an h1 heading,
+     we wrap our heading text in an <h1> tag.
+-->
+
+<!-- or... in proper HTML syntax
+    <html>
+        <head>
+        </head>
+        <body>
+            <h1>This is heading 1</h1>
+            <h2>This is heading 2</h2>
+            <h3>This is heading 3</h3>
+            <h4>This is heading 4</h4>
+            <h5>This is heading 5</h5>
+            <h6>This is heading 6</h6>
+        </body>
+    </html>
+-->
+
+<!-- Using the correct level of heading is important as levels provide a hierarchy to the content.
+     An h1 heading should always be used for the heading of the overall page, 
+     and the lower level headings should be used as the headings for content
+     in smaller sections of the page.
+-->
+
+
+<!-- Strong Element -->
+
+<!-- The <strong> element makes text bold. It also semantically marks text as important;
+     this affects tools, like screen readers, that users with visual impairments will rely on to
+     use your website.
+     
+     The tone of voice on some screen readers will change to communicate the importance of text
+     within a strong element. To define a strong element, we wrap text content in a <strong> tag.
+        
+     You can use strong on its own:
+-->
+
+<!-- or... in proper HTML syntax
+    <html>
+        <head>
+        </head>
+        <body>
+            <strong>Lorem ipsum dolor</strong>
+        </body>
+    </html>
+
+    !! But you will probably find yourself using the strong element much more in combination with other text elements, like this:
+    <html>
+        <head>
+        </head>
+        <body>
+            <p>Lorem ipsum <strong>dolor sit</strong> amet, consectetur adipiscing elit.</p>
+        </body>
+    </html>
+-->
+
+<!-- Em (italic/emphasized) element -->
+
+<!-- The <em> element makes text italic. It also semantically places emphasis on the tet,
+     which again may affect things like screen readers. To define an emphasized element, wrap
+     the text content in an <em> tag.
+
+     To use <em> on its own: (next section)
+-->
+
+<!-- or... in proper HTML syntax 
+    <html>
+        <head>
+        </head>
+        <body>
+        <em>Some emphasized text</em>
+        </body>
+    </html>
+
+    !! Again, like the strong element, you will find yourself mostly using the <em> element with other text elements:
+    <html>
+        <head>
+        </head>
+        <body>
+            <p>Lorem ipsum <em>dolor sit</em> amet, consectetur adipiscing elit.</p>
+        </body>
+    </html>
+-->
+
+<!-- Nesting and Indentation -->
+
+<!-- You may have noticed that in all the examples in this lesson, we indent any elements that are within other elements.
+     This is known as nesting elements.
+     
+     When we nest elements within other elements, we create a parent and child relationship between them.
+     The nested elements are the children and the element they are nested within is the parent.
+     
+     In the following example, the body element is the parent and the paragraph is the child.
+-->
+
+<!-- or... in proper HTML syntax 
+    <html>
+        <head>
+        </head>
+        <body> <- parent
+            <p>Lorem ipsum dolor sit amet.</p> <- child
+        </body>
+    </html>
+
+    !! Just as in human relationships, HTML parent elements can have many children.
+    Elements at the same level of nesting are considered to be siblings.
+
+    For example, the two paragraphs in the following code are sibling, since they are both children
+    of the body tag and are at the same level of nesting as each other:
+
+    <html>
+        <head>
+        </head>
+        <body>
+            <p>Lorem ipsum dolor sit amet.</p> <- siblings with paragraph 2
+            <p>Ut enim ad minim veniam.</p> <- siblings with paragraph 1
+        </body>
+    </html>
+-->
+
+<!-- We use indentation to make the level of nesting clear and readable for ourselves and
+     other developers who will work with our HTML in the future. In our examples, we have
+     indented any child elements by two spaces per nesting level.
+     
+     The parent, child, and sibling relationships between elements will 
+     become much more important later when we start styling our HTML with CSS
+     and adding behavior with JavaScript.
+     
+     For now, however, it is just important to know the distinction between how
+     elements are related and the terminology used to describe their relationships.
+-->
+
+<!-- HTML comments (hello!)
+     HTML comments are not visible to the browser; they allow us to comment on our code
+     so that other developers or our future selves can read them and get some context about something that might not be clear in the code.
+-->
+
+<!-- In order to write an HTML comment, we just enclose the comment with -->
+     <!-- Hello! -->
+
+<!-- or... in proper HTML syntax -->
+    <!-- <h1> View the HTML to see the hidden comments </h1> -->
+
+    <!-- I am an HTML comment -->
+
+    <!-- <p>Some paragraph text</p> -->
+
+    <!-- I am another HTML comment -->
+
+
+<!-- If you find typing out the comments syntax tiring,
+     the following shortcut will help you quickly create
+     a new comment, convert any line to comment, or
+     uncomment any line: Ctrl + /
+-->
+
+<!-- Knowledge Check 
+     1. How do you create a paragraph in HTML?
+        You create a paragraph by typing <p>some content here</p>
+     
+     2. How do you create a heading in HTML?
+        You create a heading by typing <h1>some content here</h1>
+        ranging from h1 to h6.
+
+     3. How many different levels of headings are there and what is the
+     difference between them?
+        The first level (h1) is the largest one, and is considered to be the
+        title for a web page deployment, where as the other headings are used
+        to support a sub-topic/outline of the preceding heading.
+
+     4. What element should you use to make text bold and important?
+        You use <strong>some content here</strong>.
+
+     5. What element should you use to make text italicized to add emphasis to it?
+        You use <em>some content here</em>.
+
+     6. What relationship does an element have with any nested elements within it?
+        A parent-child relationship.
+
+     7. What relationship do two elements have if they are the same level of nesting?
+        A sibling relationship.
+
+     8. How do you create HTML comments?
+        You use < !-- and < -- > (without the space)
+-->

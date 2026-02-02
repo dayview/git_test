@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Box Model Explorer</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background-color: #f0f0f0;
+            }
+
+            /* Example 1: Visualizing all box model properties */
+            .box-demo {
+                /* Content Area */
+                width: 200px;
+                height: 100px;
+                background-color: #4CAF50;
+
+                /* Padding: space between content and border */
+                padding: 20px;
+
+                /* Border: visible edge of the box */
+                border: 5px solid #FF5722;
+                 
+                /* Margin: space outside the border */
+                margin: 30px;
+
+                color: white;
+                font-weight: bold;
+            }
+
+            /* Example 2: Default box-sizing (content-box) */
+            .content-box {
+                width: 200px;
+                height: 200px;
+                padding: 20px;
+                border: 5px solid #2196f3;
+                background-color: #64b5f6;
+                margin: 20px 0;
+                box-sizing: content-box; /* Default */
+            }
+
+            /* Example 3: Border-box (includes padding and border in width) */
+            .border-box {
+                width: 200px;
+                height: 100px;
+                padding: 20px;
+                border: 5px solid #9c27b0;
+                background-color: #ba68c8;
+                margin: 20px 0;
+                box-sizing: border-box; /* Modern approach */
+            }
+
+            /* Example 4: Individual margin/padding control */
+            .custom-spacing {
+                width: 180px;
+                background-color: #ff9800;
+
+                /* Individual sides */
+                padding-top: 10px;
+                padding-right: 20px;
+                padding-bottom: 30px;
+                padding-left: 40px;
+
+                margin-top: 10px;
+                margin-bottom: 20px;
+                margin-left: 50px;
+
+                border: 3px dashed #f57c00;
+            }
+
+            /* Example 5: Shorthand notation */
+            .shorthand-demo {
+                width: 200px;
+                background-color: #00bcd4;
+
+                /* padding: top right bottom left (clockwise) */
+                padding: 10px 20px 10px 20px;
+
+                /* padding: vertical horizontal */
+                /* padding: 10px 20px; */
+
+                /* padding: all sides */
+                /* padding: 15px; */
+
+                margin: 20px auto; /* auto centers horizontally */
+                border: 2px solid #0097a7;
+            }
+
+            .info {
+                background-color: white;
+                padding: 15px;
+                border-left: 4px solid #4caf50;
+                margin: 20px 0;
+            }
+
+            .comparison {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            h3 {
+                color: #333;
+                border-bottom: 2px solid #4caf50;
+                padding-bottom: 10px;
+            }
+
+            code {
+                background-color: #f4f4f4;
+                padding: 2px 6px;
+                border-radius: 3px;
+                font-family: 'Courier New', monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>The Box Model Interactive Lab</h2>
+
+        <div class="info">
+            <strong>Box Model Components (from inside out):</strong><br>
+            1. <strong>Content</strong>: The actual content (text, images, etc.)<br>
+            2. <strong>Padding</strong>: Space between content and border (transparent)<br>
+            3. <strong>Border</strong>: The edge surrounding the padding<br>
+            4. <strong>Margin</strong>: Space outside the border (transparent, affects spacing between elements)
+        </div>
+
+        <h3>Example 1: Complete Box Model</h3>
+        <div class="box-demo">
+            This box has all four layers!
+        </div>
+        <div class="info">
+            <strong>What's happening:</strong> The green area is content + padding. The red line is the border. The space around everything is the margin.
+            <br><strong>Actual width:</strong> 200px (content) + 40px (padding left+right) + 10px (border left+right) + 60px (margin left+right) = 310px total space
+        </div>
+
+        <h3>Example 2 vs 3: box-sizing Comparison</h3>
+        <div class="comparison">
+            <div>
+                <div class="content-box">
+                    content-box (default)
+                </div>
+                <p><strong>Total Width: </strong>250px<br> (200 + 20 + 20 + 5 + 5)</p>
+            </div>
+            <div>
+                <div class="border-box">
+                    border-box (recommended)
+                </div>
+                <p><strong>Total width: </strong>200px<br>(padding & border included)</p>
+            </div>
+        </div>
+        <div class="info">
+            <strong>Why border-box is better:</strong> When you set width to 200px, it stays 200px regardless of padding/border. This makes layouts predictable and easier to manage.
+            <br><br><strong>Pro Tip:</strong>Use <code>* { box-sizing: border-box; }
+            </code> at the start of your CSS!
+        </div>
+
+        <h3>Example 4: Individual Side Control</h3>
+        <div class="custom-spacing">
+            Different padding on each side creates interesting asymmetric layouts
+        </div>
+        <div class="info">
+            <strong>Use case:</strong> Great for creating visual interest or aligning text with other elements. Notice the left indent and varied spacing.
+        </div>
+
+        <h3>Example 5: Shorthand Notation</h3>
+        <div class="shorthand-demo">
+            Centered with auto margins
+        </div>
+        <div class="info">
+            <strong>Shorthand patterns:</strong><br><ul>
+                <li><code>padding: 10px;</code> → all sides</li>
+                <li><code>padding: 10px 20px;</code> → vertical horizontal</li>
+                <li><code>padding: 10px 20px 30px 40px;</code> → top right bottom left (clockwise)</li>
+                <li><code>margin: 0 auto;</code> → horizontally center block elements
+                </li>
+            </ul>  
+        </div>
+
+        <h3> Experiment Section </h3>
+        <div class="info">
+            <strong>Try these experiments (edit the CSS above): </strong><br>
+            <ol>
+                <li>Change <code>padding</code> values to see how the colored background expands</li>
+                <li> Modify <code>margin</code> to control spacing between boxes</li>
+                <li> Add <code>margin: -10px;</code> to see negative margins (overlapping)</li>
+                <li> Set <code>padding: 50px;</code> and <code>border: 20px solid red;</code> on both box-sizing examples to see the difference</li>
+                <li> Use <code>margin: 0 auto;</code> with a fixed width to center elements</li>
+            </ol>
+        </div>
+    </body>
+</html>
